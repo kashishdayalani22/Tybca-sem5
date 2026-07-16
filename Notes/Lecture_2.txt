@@ -1,0 +1,133 @@
+1.Example of constructor execution
+2. remove self from constructor : error
+===============
+
+correct the program
+
+class Test:
+      def __init__(self):
+          print("constructor executed....")
+
+t1=Test()
+t2=Test()
+================
+overloading is not there in python for constructor.
+
+PVM always consider only last constructor.
+===================
+class Test:
+      def __init__(self):
+          print("no-arg")
+      def __init__(self,name):
+          print("one-arg",self.name)
+      def __init__(self,name,no):
+          self.name=name
+          self.no = no
+          print("two-arg",self.name,self.no)    
+                
+#t1=Test()    error
+#t2=Test('priti')    error
+t3=Test('priti',12)
+
+overloading is not possible with constructor
+=======================
+class Student:
+     def __init__(self,name,no):
+          print("constructor executed")
+          self.name=name
+          self.no = no
+          print(self.name,self.no)    
+      def display(self):
+           print("method execution...")
+          print("name : ",self.name)
+          print("no : ",self.no)
+
+s=Student('priti',100)
+s.display()
+
+=================
+difference between constructor and method
+
+1. constructor is created to initialize and declare instance variable while method is used to perform business logic.
+2. constructor is called only once per object while we can call method any number of times per object.
+3.method name can be anything  but constructor name should be __init__()
+4.method will be executed if we call while constructoe will be executed automatically ,if we are creating object.
+
+======================
+types of variables
+
+Instance variable /Object level varible
+static variable/class level variable
+local variable/method variable
+
+types of methods
+
+instance method
+class method
+static method
+
+=======================
+every student have separate name and roll number are there.
+Instance variable /Object level varible
+
+1.values of name and roll no are varied from object to object.
+2.the variable which are declared by using self is called instance variable.
+3. for every object separate copy of instance variable will be maintained.
+====================
+static variable /class variable
+class Student:
+    clgname="MSU"
+    def __init__(self,name,no):
+          print("constructor executed")
+          self.name=name
+          self.no = no
+           
+    def display(self):
+          print("method execution...")
+          print("name :   ",self.name)
+          print("no :   ",self.no)
+
+s1=Student('priti',100)
+s1.display()
+print(s1.clgname)
+print(Student.clgname)
+s2=Student('pooja',100)
+s2.display()
+print(s2.clgname)
+print(Student.clgname)
+=====================
+Local variable
+variable which are declared within method for temporary use is called local variable
+
+====================
+instance method /object related method
+method where we are using instance varible.
+object related data
+
+===============
+class method
+@classmethod
+def getcollegename(cls):
+	print("college name",cls.clgname)
+
+use @classmethod decorator
+
+===================
+
+cls must be rquired
+you can access class method by using class name.
+==============
+static method
+utility method
+
+@staticmethod
+def findAverage(x,y):
+       print("Average : ",(x+y)/2)
+
+you can call it by class name or object.
+
+
+
+
+          
+          

@@ -1,0 +1,219 @@
+session 5
+
+variable declare within the class is called static variable
+class Student :
+    The value of varaiable not vary from object to object that variable is called class variable or Static variable
+Instance :for every object a separate copy maintained.
+Static :for all object a single copy maintained at class level
+where to declare
+class Student :
+         clgname="MSU"
+           def __init__(self,name,no):
+              self.name = name
+              self.number = no
+s1 = Student("Priti",1)
+s2 = Student("Pooja",2)
+print(s1.name,s1.number,Student.clgname)
+print(s2.name,s2.number,Student.clgname)
+      
+===================================
+where to declare static variable
+ Within the class directly but from outside of any method
+  class Example:
+          a=10
+ Inside Constructor by using classname
+          def __init__(self):
+                Example.b = 20
+ Inside Instance method by using classname
+         def ex(self):
+              Example.c = 30
+ Inside class method by using cls variable or classname 
+         @classmethod
+         def ex1(cls):
+             cls.d = 40
+             Example.e = 50
+Inside  static method by using class name
+         @staticmethod
+         def ex2(cls):
+             Example.f = 60
+         
+outside class using class name
+Example.g = 70
+print(Example.__dict__)     #to print static variable  
+
+=============================
+how to access
+
+within class 
+    classname,self,cls  but recommeded to use cls
+outside class
+    object reference,class name
+
+1.Within the class we can access by using classname but inside classmethod we can also used cls varaible
+
+from outside class classname or object reference
+class Test :
+     a = 10
+     def __init__(self):
+          print("Inside constructor")
+           print(Test.a)   #using classname
+           print(self.a)   #using self
+     def  m1(self):
+           print("Inside instance method")
+           print(Test.a)
+           print(self.a)
+    @classmethod
+     def  m2(cls):
+           print("Inside class method")
+           print(Test.a)
+           print(cls.a)
+     @staticmethod
+     def  m3():
+           print("Inside static method")
+           print(Test.a)
+          
+
+
+t=Test()
+t.m1()
+t.m2()
+t.m3()
+print("outside the class")
+print(t.a)
+print(Test.a)
+=============================
+How to modify static variable
+within the class we should use classname,cls variable
+class Test :
+     a =10
+     def __init__(self):
+          self.a=20
+t = Test()
+print(Test.a)   # 10
+print(t.a)      #20
+===========================
+class Test :
+     a =10
+     def __init__(self):
+          Test.a=20
+t = Test()
+print(Test.a)   # 20
+print(t.a)      #20
+==============================
+class Test :
+     a =10
+     def __init__(self):
+          Test.a=20
+     @classmethod
+     def m1(cls):
+         cls.a =30
+         Test.a =40
+t = Test()
+t.m1()
+print(Test.a)   # 40
+print(t.a)      #40
+=================================
+class Test :
+     a =10
+     def __init__(self):
+          Test.a=20
+     @classmethod
+     def m1(cls):
+         cls.a =30
+t = Test()
+t.m1()
+print(Test.a)   # 30
+print(t.a)      #30
+===============================
+class Test :
+     a =10
+     def __init__(self):
+          Test.a=20
+     @classmethod
+     def m1(cls):
+         Test.a =40
+t = Test()
+t.m1()
+print(Test.a)   # 40
+print(t.a)      #40
+===================================
+class Test :
+     a =10
+     def __init__(self):
+          Test.a=20
+     @staticmethod
+     def m2():
+         Test.a =50
+t = Test()
+t.m2()
+print(Test.a)   # 50
+print(t.a)      #50
+so if you want to modify the value of static variable inside the class ,it is possible only with cls variable or Class name. Not possible with self.
+============================================
+and from outside class only with class name
+class Test :
+     a =10
+     def __init__(self):
+          Test.a=20
+     
+t = Test()
+Test.a = 60   #update static variable
+t.a = 70      # creating new instance variable
+print(Test.a)   # 60
+print(t.a)      #70
+====================================
+how to delete static variable
+within class
+   classname,cls variable
+outside class
+   classname
+can we delete same variable once i deleted that variable?
+==========================
+class BCA:
+      a = 10
+      def m1(self):
+         self.a = 1000   #new instance variable created
+b = BCA()
+b.m1()
+print(BCA.a)   # 10
+print(b.a)     #1000
+================================
+class Test:
+      x = 10   #static
+      def m1(self):
+         self.y = 20
+t1 = Test()
+t2 = Test()
+t1.x = 888
+t1.y = 999
+print(t1.x,t1.y)    #  888 999  
+print((t2.x,t2.y)   #   10 Error   we are not calling m1()
+=====================================
+class Test:
+      x = 10   #static
+      def __init__(self):
+         self.y = 20
+t1 = Test()
+t2 = Test()
+t1.x = 888
+t1.y = 999
+print(t1.x,t1.y)    #  888 999  
+print((t2.x,t2.y)   #   10 20   
+=======================================
+class Test:
+      x = 10   #static
+      def __init__(self):
+         self.y = 20
+t1 = Test()
+t2 = Test()
+Test.x = 888
+t1.y = 999
+print(t1.x,t1.y)    #  888   999
+print((t2.x,t2.y)   #   888  20
+=================================  
+
+
+
+
+
+       

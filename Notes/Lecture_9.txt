@@ -1,0 +1,60 @@
+Session 9
+how to access members of one class inside another class
+class Employee :
+	def __init__(self,eno,ename,esal): 
+		self.eno=eno 
+		self.ename=ename 
+		self.esal=esal 
+         
+	def display(self): 
+		print('Employee Number:',self.eno) 
+		print('Employee Name:',self.ename) 
+		print('Employee Salary:',self.esal) 
+class Test:
+          def modify(emp): 
+		emp.esal=emp.esal+10000 
+		 emp.display() 
+
+this is static method.beacuse no self is there.
+it modify the object of employee and call its display ()
+
+Inner class
+class declared inside another class 
+without existing one type of obejct if there is no chance of existing another type of object then we should go for Inner class.
+ engin inside car 
+without existing car no chance of existing engine
+class Car :  #outer class
+         .........
+        class Engine :  #inner class
+
+University
+   Department
+Department is partof university
+
+
+Human Body
+   Head
+Innesr class is always associated with outer class.
+
+in one outer we can define any no of inner class.
+
+
+o=Outer() 
+i=o.Inner() 
+i.m1() 
+===================
+i=Outer().Inner() 
+i.m1() 
+====================
+Outer().Inner().m1() 
+
+
+person 
+    DOB
+
+what is need of inner class 
+to separately define instance variable of inner class
+
+
+
+

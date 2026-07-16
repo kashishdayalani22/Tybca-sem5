@@ -1,0 +1,148 @@
+Sesion 4
+=============
+instance variable
+for every student separate name should be required. 
+if the value of variable is  varied from object to object then it is known as instance variable.
+for every object seperate copy will be created.
+class student :
+     def __init__(self,name,no):
+             self.name=name
+            self.no = no
+
+s1 = student('priti',1)
+s2=student('pooja',2)
+s3=student('rahul',3)
+
+
+where we have to declare instance variable
+========================================
+1. inside constructor using self
+2.inside instance method using self
+
+this is for inside class
+class student :
+     def __init__(self,name,no):
+             self.name=name
+             self.no = no
+
+    def info(self):
+        self.marks=60
+s1 = student('priti',1)
+print(s1.__dict__)    # to print instance variable
+s1.info()
+print(s1.__dict__)    # to print instance variable object related dictionary
+means when we call instance method marks will be added to object.
+====================
+3. outside the class using refrence variable
+class student :
+     def __init__(self,name,no):
+             self.name=name
+            self.no = no
+
+    def info(self):
+        self.marks=60
+s1 = student('priti',1)
+s1.info()
+s1.age = 30  #instane variable
+print(s1.__dict__)    # to print instance variable object related dictionary
+=====================================
+ex. 1  print total no of instance variable.
+ex. 2 create one instance varible inside contructor,2 within inside instance method and one outside class.
+====================================
+class Test :
+     def __init__(self):
+             self.a=10
+            self.b = 20
+            self.c=30
+
+    def m1(self):
+        self.d=40
+   def m2(self):
+        self.e=50
+t1 = Test()
+t1.m1()    
+t2 = Test()
+t2.m2()    
+t2.s=300
+t2.y=400
+
+how many instance varible are created for object t1 and t2???
+t1 = 4 variable
+t2 = 6 variable
+=============================================================
+How to access instance variable
+within class by using self
+from ouside the class by using refrence variable
+
+class student :
+     def __init__(self,name,no):
+             self.name=name
+            self.no = no
+
+    def info(self):
+           print('name : ",self.name)
+s1 = student('priti',1)
+s1.info()
+print(s1.name,s1.no)     # to print value of instance variable outside class
+===============================
+how to delete instance variable
+del self.variablename
+del refrencevariable.variablename
+class Test :
+     def __init__(self):
+             self.a=10
+            self.b = 20
+            self.c=30
+    def delete(self);
+           del self.b
+           del self.c
+    
+t1 = Test()
+print(t1.__dict__)    # how many instance variable are there
+t1.delete()
+print(t1.__dict__)    # how many instance variable are there
+del t1.a
+print(t1.__dict__)    # how many instance variable are there
+=====================================
+class Test :
+     def __init__(self):
+             self.a=10
+            self.b = 20
+            self.c=30
+
+ t1 = Test()
+t2=Test()
+del t1.a
+del t2.b
+print(t1.__dict__)    # how many instance variable are there
+print(t2.__dict__)    # how many instance variable are there
+
+here if we delete instance variable from one object it does not affect another object because each object has its own copy of instance variable.
+==================================A
+class Test :
+     def __init__(self):
+             self.a=10
+            self.b = 20
+
+ t1 = Test()
+t2=Test()
+t1.a = 222
+ t1.b=333
+print(t1.a,t1.b)    # 222 333
+print(t2.a,t2.b)    #  10 20
+===================================
+ t1 = Test()
+t2=Test()
+t1.a = 222
+ t2.b=333
+print(t1.a,t1.b)    # 222 20
+print(t2.a,t2.b)    #  10 333
+=========================================
+
+create one class named Exam.
+1. within this class create three instance variables  os,html,python inside constructor .
+2.Now create two more instance variable OOP,Dbms inside instance method
+3. Now create two more instance variable pc software,pc database outside the class using refrence variable.
+4. Print all the instance variable usin __dict__
+5.Now delete  html and os instance variable inside the class (check whether can we delete within constructor)
+6.now delete OOP variable outside the class.

@@ -1,0 +1,80 @@
+we can access instance method.
+
+to develope  100 building
+first you have to make plan
+now you can make any number of buildings.
+
+
+refrence variable 
+s1 = student('priti',100)
+ s1 is refrence variable and student('priti',100 is object
+
+one object have multiple refrence variable.means multiple refrecne variable can point to same object.
+
+self variable
+
+class student :
+     def __init__(self):
+          print(id(self))
+s = student()
+print(id(s))
+
+
+implicit variable provided by PVM
+
+Write a program that justify that object reference and self variable both pointing to current object.
+
+1.here reference variable and self both are pointing to current object. so s and self both pointiong to same object.
+
+2.so outside of the class we can access current object using refrence variable and inside the class we can access using self variable.
+
+3.for every instance method and constructor first argument should be self.
+
+4.PVM is responsible to provide value of self argument.we are not required to provide explicitly.
+
+5.by using self we can declare instane variable and instance method.
+
+6. eno and self.eno  here eno is local variable and self.enao is current object variable.
+
+7.yo can creat a instance variable inside a constructor only.
+
+8.whatever you are passing to constructor and instance method it is considered as self by PVM.Instead of self we can use any name but recommended to use self.
+
+
+constructor :
+
+__init__() :
+special method
+1.the name should be always : __init__():
+2.whwnever we creating object constructor will be executed automatically.we are not required to call explicitly.
+3. The main objective : to declare and initialize instance variable
+4. For every object constructor will be executed only once.
+5.Every constructor have atleast one argument that is self.
+6.special method
+7.If you do not provide any constructor python will provide default constructor. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+classs 
+   name
+   no
+   add
+
+
+
+s1    s2    s3
