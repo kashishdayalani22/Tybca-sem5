@@ -1,0 +1,114 @@
+session 12
+Operator Overloading
+Polymorphism
+one name many form
+poly means many morphs means form
+yourself is best example of polymorphism.
+same person behave different in front of different people
+===================
+overloading
+10+20 = 30
+"priti"+"Patel" = pritipatel
+same operator multiple behaviour
+deposit(cash)
+deposit(Cheque)
+deposit(demand_draft)
+method name is same but arguments are different
+===============================
+Operator overloading
+class Book:
+      def __init__(self,pages):
+	self.pages = pages
+b1=Book(100)
+b2=Book(200)
+print(b1+b2)   #error
+python supports operator overloading we can extend functionality of + operator.
+operator overloading by using magic methods
+__add__()
+==================
+class Book:
+      def __init__(self,pages):
+	self.pages = pages
+     def __add__(self,other):
+	return self.pages +other.pages
+b1=Book(100)
+b2=Book(200)
+print(b1+b2)   #300
+==============================
+class Book:
+      def __init__(self,pages):
+	self.pages = pages
+     def __add__(self,other):
+	return self.pages +other.pages
+    def __sub__(self,other):
+	return self.pages -other.pages
+    def __mul__(self,other):
+	return self.pages *other.pages
+
+b1=Book(100)
+b2=Book(200)
+print(b1+b2)   #300
+print(b1-b2)   #
+print(b1*b2)   #
+Every operator magical method is there.magical method is called by PVM
+arguments are fix and it is only two
+=======================================
+magical method 
+
+========================================
+session 13
+class Book:
+      def __init__(self,pages):
+	self.pages = pages
+    def __add__(self,other):
+	return self.pages +other.pages
+    def __str__(self):
+	return "The no of pages : "+str(self.pages)
+
+b1=Book(100)
+b2=Book(200)
+print(b1+b2)   #300  return type is int because u r passing int value
+print(b1)    #    __main__.Book object at address      it calls __str__() magic method which has only one arguments self
+==============================================
+class Book:
+      def __init__(self,pages):
+	self.pages = pages
+    def __add__(self,other):
+	total = self.pages+other.pages
+               b= Book(total)
+              return b
+    def __str__(self):
+	return "The no of pages : "+str(self.pages)
+
+b1=Book(100)
+b2=Book(200)
+b3= Book(300)
+print(b1+b2+b3) 
+=========================================
+whenever we using + __add__() method will be called
+whenever we are printing book object refernce  __str__() method will be called,if we are not providing any implementation then default implementation is called.
+for meanigful string represtation __str__() is called
+=======================================
+class Student:
+	def __init__(self,name,marks):
+		self.name = name
+		self.marks = marks
+                  def __lt__(self,other):
+		return self.marks < other.marks
+
+s1=Student('priti',100)
+s2=Student("pooja",200)
+print(s1<s2)
+==========================
+method overloading
+abs(int)
+abs(long)
+abs(float)
+python does not support method overloading...
+beacuse there is no concepts of type
+
+
+
+
+
+

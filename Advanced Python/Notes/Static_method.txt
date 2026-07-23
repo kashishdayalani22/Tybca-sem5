@@ -1,0 +1,49 @@
+Static method
+not related to static varible
+just general utility method not using any instance or class variable
+
+
+@staticmethod
+def sum(x,y):
+      print('The sum : ',x+y)
+
+we can call using Object refrence or class name but recommede to use class name
+===================================================
+
+
+class Test:
+      def m1(self,name):
+          self.x=10
+          print("Instcance method : ',self.x,name)
+
+t=Test()
+t.m1('priti')
+
+====================================================
+
+class Test:
+    @staticmethod
+    def add(x,y)
+        print("The sum : ",x+y)
+
+    @staticmethod
+    def average(x,y)
+        print("The sum : ",(x+y)/2)
+
+
+Test.add(10,20)
+Test.average(10,20)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

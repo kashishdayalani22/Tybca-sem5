@@ -1,0 +1,83 @@
+Session 11
+garbage collection
+to destory unused object to avoid performance problem
+gc module   to check garbage collect is enabled or not
+gc.isenabled()
+gc.disable()
+gc.enabled()
+
+how to see all methods in particular module??
+
+destructor
+__del__(self):
+close db connection ,to close network connection..
+for cleanup activity
+to perform resource deallocation activity
+before deleteing the object gc will call destructor
+gc is invoked by PVM
+
+
+to destroy useless object : GC
+to perform cleanup activities befor destroyin an object.
+
+class Test :
+    def __init__(self):
+        print("c.....")
+    def __del__(self):
+        print("d.....")
+t= Test()
+print(t)
+t=None
+print(t)
+        
+=========================
+class Test :
+    def __init__(self):
+        print("c.....")
+    def __del__(self):
+        print("d.....")
+t1= Test()
+t2=t1
+t3=t2
+t4=t3
+
+here only one object is created pointed by 4 reference variable.
+so you have to delete all refence varaible then and then only object is eligible gor garbage collector.
+
+
+import time 
+class Test: 
+	 def __init__(self): 
+		print("Constructor Execution...") 
+	def __del__(self): 
+		 print("Destructor Execution...") 
+
+ t1=Test() 
+ t2=t1 
+ t3=t2 
+ del t1 
+ time.sleep(5) 
+ print("object not yet destroyed after deleting t1") 
+ del t2 
+ time.sleep(5) 
+ print("object not yet destroyed even after deleting t2") 
+ print("I am trying to delete last reference variable...") 
+ del t3 
+print("End of Allication")
+=============================
+How to find the number of references of an object: 
+sys module contains getrefcount() function for this purpose. 
+
+
+import sys 
+class Test: 
+      pass 
+t1=Test() 
+ t2=t1 
+ t3=t1 
+ t4=t1 
+ print(sys.getrefcount(t1)) 
+
+
+
+        

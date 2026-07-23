@@ -1,0 +1,24 @@
+Session 7
+instance method
+self
+  def m1(self)
+        some refrence is required to point current object.that is self
+we can call instance method by self inside class
+outside by using object reference
+class student :
+         def __init__(self,name.marks):
+                   self.name=name
+                   self.marks=marks
+        def display(self):
+                 print("hi....",self.name)
+                 print("my marks are .....",self.marks)
+        def grade(self):
+
+setter and getter method Example of instance method
+to set or get the data for the object getter/setter method is used
+def   setVariableName(self,varaiablename)
+
+s=student()
+print(s.name)   //direct access no validation
+print(s.getName())  // data security u can add validation    Encapsulation
+use standard terminology for getter/setter

@@ -1,0 +1,29 @@
+Instance method VS Class Method
+=======================================
+Inside method we are going to access only class variable(static variable) than its class method
+ you can call using class name
+ use decorator @classmethod
+  every class method has one arguments is cls
+
+Inside instance method we can access both instance and static varibles
+but in side class method we can access we can access on static variable
+
+to declare insyance method we are not required to use any decorator but for class method we should use @classmethod decorator.
+
+In Instance method first arguments should be self which is reference to current objectbut in class method first arguments should be cls which is refernce to the current class object
+.
+
+we can call instance method by using object refrence 
+we can call class method  either by using object refrence or by using class name but recommended to use classname.
+
+
+
+@classmethod
+def  m1(cls):
+     print(cls.collegename)
+     print(cls.bankname)
+
+
+
+
+    

@@ -1,0 +1,28 @@
+session 6
+Highly recommende to access instance  using self and class variable using class name
+global variable ,static variable and local variable
+a=10      #global
+class temp:
+    b=20    #static
+    def m1(self):
+        self.c=30   #instance
+        d = 40      #local
+        
+
+t=temp()
+print(a)
+print(temp.b)
+================
+class temp:
+    def m1(self):
+        global a
+        a = 10
+    def m2(self):
+        print(a) 
+
+t=temp()
+t.m1()
+t.m2()
+print(a)
+===============
+Types of methods

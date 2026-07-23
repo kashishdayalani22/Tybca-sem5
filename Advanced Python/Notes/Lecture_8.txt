@@ -1,0 +1,141 @@
+session 8
+
+Instance method
+atleast one instance variable that method should be intance method
+instance method is very costly because first you have to create object reference and then you can call instance method.
+
+
+class method
+if u are using only static data
+u can call it by class name ...no need to create object.
+
+
+instance method Vs class method
+current class object   
+def m1(cls):
+use @classmethod decorator.
+1.within class method we cant access instance variable
+inside instance we can acces instance and static variables but in class method we can access only static variables.
+
+Create a Dog class with one static variable legs. Now add one class method walk which display messages like "Dog walks with 4 legs.....",if you pass animal name as dog.
+Now call walk() with cat and cow. 
+
+Write a program to count the no of objects created for particular class.
+create a class Mathoperation add static method like sum(),product() and average().Now call all methods with diffreents arguments.
+if we are not using any decorator
+
+for classmethod decorator is mandatory
+for staticmethod @staticmethod is optional
+
+without any decorator then it may be static or instance method
+
+but iwe are calling object reference then it should be instance method
+but if we are calling using class then it is static method.
+class Test
+    def m1():
+            print("hellO')
+t=Test()
+t.m1()
+Error : no self in m1()
+==================================
+class Test
+    def m1():
+            print("hellO')
+Test.m1()
+static method
+===================================
+class Test
+@staticmethod
+    def m1():
+            print("hellO')
+t = Test()
+t.m1()
+==================================
+class Test
+
+    def m1(x):
+            print("hellO',x)
+t = Test()
+t.m1(10)
+error
+u r passing one argument
+===========================
+
+
+
+
+
+
+
+
+
+
+
+class Test :
+  
+     def setName(self,name):
+       self.name = name
+
+     def getName(self):
+         return self.name
+
+     def setAge(self,age):
+       self.age = age
+
+     def getAge(self):
+         return self.age   
+        
+
+
+t = Test()
+
+t.setName("Dheye")
+t.setAge(12)
+
+
+print("Name : ",t.getName())
+print("Age :  ",t.getAge())
+        
+
+
+
+
+
+def __init__(self,a)
+   self.a = a
+
+
+
+
+
+
+
+t = Test()
+print(t.a)
+
+
+
+t.setA()
+print(t.getA()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

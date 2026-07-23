@@ -1,0 +1,88 @@
+session 10
+Inner class
+ the class declared within another class
+Need  : without existing one type of one type of class ther is no chance of existing another type of object then we should go for Inner class
+class Outer:
+           class Inner:
+		def m1(self):
+ 			pass
+o=outer()
+i=o.Inner()
+i.m1()
+==================================
+inner class is associated with outer class.
+inner class cant exist alone.
+class Person
+          def __init__(self):
+ 			self.name = "dhyey"
+			self.dob = self.DOB()       
+          def display(self):
+			print("Name : ",self.name)
+			self.dob.display()
+          class DOB:
+	      	def __init__(self):
+ 				self.dd = 16
+				self.dmm = 7
+				self.yyyy=1985
+			def display(self):
+				print("DOB : {}/{}/{}".format(self.dd,self.mm,self.yyyy))
+P=Person()
+p.display()
+p.dob.display()
+===============================================
+person:
+  	 Head :
+         		 talk()
+        		  Brain:  
+               		  think()
+class Human:
+	def __init__(self):
+ 		self.name = "dhyey"
+		self.head = self.Head()
+	def display(self):
+		print("Name : ",self.name)
+		self.head.talk()
+		self.head.brain.think()
+	
+                 class Head :
+				def __init__(self):
+					self.brain = self.Brain()
+				def talk(self):
+					print("Talking....")
+	class Brain:
+				def think(self):
+					print("Thinking....")
+h= human()
+h.display()
+h.head.talk()
+h.brain.think()
+====================================================
+Nested methods
+inside method any functionality multiple tiems required then u can use nested method.
+advantage : code reusablity
+class Test:
+         def m1(self):
+	   	def sum(a,b):
+ 			print("The 1st arguments : ",a)
+			print("The 2nd argument : ",b)
+			print("The sum : ",a+b)
+			print("="*20)
+	  sum(10,20)
+	  sum(100,200)
+	  sum(1000,2000)
+t=Test()
+t.m1()
+=================================
+Garbage Collection
+del t1 
+t1=None both are same or not
+here del t1 delete object reference so not exist so eligible for garbage collection
+but t1 = none means t1 is still exist but not pointing to any object so eligible for garbage collection
+Main Purpose
+to destroy useless object ,always running in background
+
+
+
+             
+
+

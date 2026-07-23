@@ -1,0 +1,116 @@
+session 18
+Composition and Aggragation  : Has-A Relationship
+           
+Very strong association  between objects : without i cant be ther   : Composition
+weak association : without u i can be there : aggregation
+University  (container object)
+      Departments (conained object)
+without existing university is it possible to exist separtment .so strong association is called composition.
+University has a department but strong association
+================
+       Department (conatiner object)
+     	Professor (contained object)
+Professor has a Professor
+now department closed  but still professor can work some other departemnt
+without existing department ther may be chance of professor existance.
+without existing conatiner object ther may be chance of exist conatined object it is aggregation.
+===============
+student and student name strong relation  composition
+student and collegename weak relation   aggrgation
+
+class student :
+     	clgname = "Msu"
+	def __init__(self,name):
+		self.name = name
+print(Student.clgname)  
+print(s.name)  # error without existing student no chance of exist student name
+so relation between instance variable and  class   is called composition
+relation between static variable and    class  is called aggregatio
+=====================
+Types of inheritance
+single
+multiple
+multilevel
+hierarchical
+hybrid
+cyclic
+all inheritance is supported in python except cyclic inheritance
+it also supports multiple inheritance
+single inheritance
+single parent single child
+
+class p:
+ 	def m1(self):
+		print("parent method")
+class C(P):
+	def m2(self):
+		print("Child method..")
+c = C()
+c.m1()
+c.m2()
+======================================
+multilevel Inheritance
+class p:
+ 	def m1(self):
+		print("parent method")
+class C(P):
+	def m2(self):
+		print("Child method..")
+class CC(C):
+	def m3(self):
+		print("Child method..")
+
+c = CC()
+c.m1()
+c.m2()
+c.m3()
+=======================
+Hierarchical inheritance
+one parent but multiple child at same lever
+                              p
+             c1             c2                   c3
+class P:
+ 	def m1(self):
+		print("parent method")
+class C1(P):
+	def m2(self):
+		print("Child 1method..")
+class C2(P):
+	def m3(self):
+		print("Child 2 method..")
+
+c = C1()
+c.m1()     for c1 two method m1 and m2
+c.m2()
+c1 = c2()
+c1.m1()
+c1.m3()     for c2 two method m1 and m3
+====================
+multiple Inheritance
+multiple parent but single child
+           p1                p2
+                    c
+p1 contains m1() and p2 also contains m1() and if c call c.m1()  its called ambiguity problem diamond access problem
+class P1:
+ 	def m1(self):
+		print("parent 1 method")
+class  p2:
+	def m1(self):
+		print("parent 2 metho")
+class C(P1,P2):
+	pass
+
+c = C()
+c.m1()   # calls P1 m1() if you change order C(p2,p1) then it calls p2 m1()
+
+In multiple inheritance method resolution is based on order of parent.
+so here it access p1's m1() and if m1() is not available in p1 then it access p2's m1() method.
+==============
+hybrid Inheritance
+Combiantion of two or more Inheritance
+===================
+Cyclic Inheritance
+class A(A):
+or 
+class A(B)   and Class B(A)
+

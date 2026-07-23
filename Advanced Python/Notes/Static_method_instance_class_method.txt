@@ -1,0 +1,24 @@
+If we are using any instance varible inside method body then we should go for instance method.we should call by using object reference only.
+If we are using only static variable inside method body then this method no way related to particular object,we should declare class method.We can call either by using object rfrence or class name but recommeded to use class name.
+If we are not using any instance variable and any static varibel inside method body, we shold go for static method.We can call either by using object rfrence or class name but recommeded to use class name.
+
+
+If we are not using any decorator :
+===================================
+For classmethod ,@classmethod decorator is mandatory.
+For staticmethod ,@staticmethod decorator is optional.
+
+
+Without any decorator method can be either instance or static.If we are calling by using object reference then it should be instance method and if er are calling by using class name then it should be satic nethod.
+
+
+
+
+
+
+
+
+
+
+
+

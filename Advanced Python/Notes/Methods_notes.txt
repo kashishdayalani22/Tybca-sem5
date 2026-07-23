@@ -1,0 +1,19 @@
+1. if we are using at least one instance variable : instance method
+
+
+     def m1(self):
+            self
+
+2. if we are using only static variable nut not instance variable : class method
+      @classmethod
+      def m1(cls):
+         cls.x
+         Test.x
+
+
+
+3. if we are not using any instance or static variable : static method(general utility method"
+
+@staticmethod
+def add(x,y):
+    print(x,y)
