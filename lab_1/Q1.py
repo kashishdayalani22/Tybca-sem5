@@ -1,23 +1,12 @@
-class Employee:
-    def __init__(self, name, department, salary):
-        self.emp_name = name
-        self.emp_department = department
-        self.emp_salary = salary
+class Book:
+    def __init__(self, pages):
+        self.pages = pages
 
-    def display(self):
-        print("Name:", self.emp_name)
-        print("Department:", self.emp_department)
-        print("Salary:", self.emp_salary)
+b1 = Book(92)
+b2 = Book(183)
+b3 = Book(151)
+b4 = Book(264)
 
-class UpdateEmp:
-    def updateinfo(self, emp, new_department, new_salary):
-        emp.emp_department = new_department
-        emp.emp_salary = new_salary
+total_pages = b1.pages + b2.pages + b3.pages + b4.pages
 
-e1 = Employee("Kashish", "HR", 50000)
-print("Before Update:")
-e1.display()
-updater = UpdateEmp()
-updater.updateinfo(e1, "IT", 100000)
-print("\nAfter Update:")
-e1.display()
+print("Total number of pages in four books:", total_pages)
