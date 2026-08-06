@@ -1,17 +1,11 @@
-class Person:
-    name = "ABC"
+class Student:
+    def __init__(self, marks):
+        self.marks = marks
 
-    def display(self):
-        print("person name is: ", self.name)
-        obj = Person.DOB()
-        obj.display()
+    def __gt__(self, other):
+        return self.marks > other.marks
 
-    class DOB:
-        mm = 5
-        dd = 10
-        yyyy = 1947
-        def display(self):
-            print("person age is: ", self.dd, "/", self.mm, "/", self.yyyy)
 
-p1 = Person()
-p1.display()
+s1 = Student(8.30)
+s2 = Student(9.18)
+print(s1 > s2)
