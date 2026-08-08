@@ -7,7 +7,12 @@ for letter in str_list:
     if letter == " ":
         cipher += letter
     else:
-        cipher += chr((ord(letter) - ord('a') + (ord(key[ i % len(key)]) - ord('a'))) % 26 + ord('a'))
+        a = ord(letter) - ord('a')
+
+        b = (ord(key[i % len(key)]) - ord('a'))
+
+        cipher += chr((a + b) % 26 + ord('a'))
+
         i += 1
 
 print(cipher)
