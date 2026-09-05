@@ -8,8 +8,8 @@ public class Q2 {
             count_arr[arr[i]] = count_arr[arr[i]] + 1;
         }
 
-        for (int j = 0; j < count_arr.length - 1; j++){
-            count_arr[j + 1] = count_arr[j] + count_arr[j + 1];
+        for (int j = 1; j < count_arr.length; j++){
+            count_arr[j] = count_arr[j] + count_arr[j - 1];
         }
 
         for (int x = 0; x < count_arr.length; x++){
