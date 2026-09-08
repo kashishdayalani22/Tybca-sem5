@@ -7,6 +7,7 @@ public class LinearSearch{
             if(i == target){
                 found = true;
                 System.out.println("Target found at" + index[i] + "of array");
+                break;
             }
         }
 
