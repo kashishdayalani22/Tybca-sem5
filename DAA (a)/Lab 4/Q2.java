@@ -13,7 +13,7 @@ public class Q2 {
 
  
         for (int j = low; j < high; j++) {
-            if (arr[j] < pivot) {
+            if (arr[j] <= pivot) {
                 i++;
                 int temp = arr[i];
                 arr[i] = arr[j];
