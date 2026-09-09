@@ -1,13 +1,13 @@
 public class Q1{
     public static void main(String[] args) {
         int[] data1 = {38, 27, 43, 3, 9, 82, 10};
-        int[] data2 = {12, 11, 13, 5, 6, 7};
+        //int[] data2 = {12, 11, 13, 5, 6, 7};
 
         mergeSort(data1, 0, data1.length - 1);
-        mergeSort(data2, 0, data2.length - 1);
+        //mergeSort(data2, 0, data2.length - 1);
 
         printArray(data1);
-        printArray(data2);
+        //printArray(data2);
     }
 
     public static void mergeSort(int[] arr, int left, int right) {
