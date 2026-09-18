@@ -16,6 +16,7 @@ def find(matrix, ch):
                 return i, j
 
 def prepare(text):
+    text = text.upper().replace("J", "I")
     s = ""
     for ch in text:
         if ch.isalpha():
