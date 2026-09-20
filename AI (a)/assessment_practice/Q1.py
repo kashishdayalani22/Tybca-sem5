@@ -82,7 +82,7 @@ def solve_puzzle(start_board):
             for step_idx in range(len(path)):
                 state = path[step_idx]
                 h_val = mahhattan_distance(state)
-                print(f"Step {step_idx} | g(n) = {step_idx} | h(n) = {h_val}")
+                print(f"Step {step_idx} , g(n) = {step_idx} , h(n) = {h_val}")
                 print()
                 for row in state:
                     print(f"   {'  '.join(row)} ")
