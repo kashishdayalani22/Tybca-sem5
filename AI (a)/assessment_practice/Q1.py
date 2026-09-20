@@ -16,7 +16,7 @@ Start_Board = (
     ('g', 'h', ' ')
 )
 
-def calculate_manhattan(board):
+def mahhattan_distance(board):
     distance = 0
     for row in range(3):
         for col in range(3):
@@ -26,14 +26,14 @@ def calculate_manhattan(board):
                 distance += abs(row - target_row) + abs(col - target_col)
     return distance
 
-def get_blank_pos(board):
+def blank_position(board):
     for row in range(3):
         for col in range(3):
             if board[row][col] == ' ':
                 return row, col
 
-def get_neighbors(board):
-    blank_row, blank_col = get_blank_pos(board)
+def neighbors(board):
+    blank_row, blank_col = blank_position(board)
     neighbors = []
 
     for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
@@ -66,7 +66,7 @@ def solve_puzzle(start_board):
         return
 
     open_list = []
-    initial_h = calculate_manhattan(start_board)
+    initial_h = mahhattan_distance(start_board)
     heapq.heappush(open_list, (initial_h, 0, start_board, [start_board]))
     visited = set()
 
@@ -81,7 +81,7 @@ def solve_puzzle(start_board):
 
             for step_idx in range(len(path)):
                 state = path[step_idx]
-                h_val = calculate_manhattan(state)
+                h_val = mahhattan_distance(state)
                 print(f"Step {step_idx} | g(n) = {step_idx} | h(n) = {h_val}")
                 print()
                 for row in state:
@@ -91,10 +91,10 @@ def solve_puzzle(start_board):
             print(f"Puzzle solved in {len(path) - 1} moves!")
             return
 
-        for neighbor in get_neighbors(current_board):
+        for neighbor in neighbors(current_board):
             if neighbor not in visited:
                 tentative_g = g_cost + 1
-                tentative_h = calculate_manhattan(neighbor)
+                tentative_h = mahhattan_distance(neighbor)
                 heapq.heappush(open_list, (tentative_g + tentative_h, tentative_g, neighbor, path + [neighbor]))
 
 solve_puzzle(Start_Board)
